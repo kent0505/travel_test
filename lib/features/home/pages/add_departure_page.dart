@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:travel_test/core/models/flight.dart';
 
-import '../../../core/config/app_colors.dart';
+import '../../../core/models/flight.dart';
 import '../../../core/utils.dart';
 import '../../../core/widgets/buttons/primary_button.dart';
 import '../../../core/widgets/custom_scaffold.dart';
 import '../../../core/widgets/textfields/date_field.dart';
 import '../../../core/widgets/textfields/txt_field.dart';
-import '../../../core/widgets/texts/text_r.dart';
+import '../widgets/title_text.dart';
 
 class AddDeparturePage extends StatefulWidget {
   const AddDeparturePage({super.key});
@@ -90,11 +89,7 @@ class _AddDeparturePageState extends State<AddDeparturePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 13),
-            TextR(
-              'Departure from origin',
-              fontSize: 15,
-              color: AppColors.white70,
-            ),
+            const TitleText('Departure from origin'),
             const SizedBox(height: 13),
             TxtField(
               controller: controller1,

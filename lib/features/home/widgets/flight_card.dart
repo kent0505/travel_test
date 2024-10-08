@@ -50,7 +50,12 @@ class FlightCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   TextR(
-                    getDateDiff(flight.departureDate, flight.arrivalDate),
+                    getDateDiff(
+                      flight.departureDate,
+                      flight.arrivalDate,
+                      flight.departureTime,
+                      flight.arrivalTime,
+                    ),
                     fontSize: 15,
                   ),
                 ],

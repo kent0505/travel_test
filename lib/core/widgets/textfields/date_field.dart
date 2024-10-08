@@ -45,7 +45,7 @@ class _DateFieldState extends State<DateField> {
     return Container(
       height: 48,
       decoration: BoxDecoration(
-        color: AppColors.main,
+        color: const Color(0xff474749),
         borderRadius: BorderRadius.circular(15),
       ),
       child: TextField(

@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:travel_test/features/home/widgets/flight_card.dart';
 
 import '../../../core/config/app_colors.dart';
+import '../../../core/utils.dart';
 import '../../../core/widgets/buttons/primary_button.dart';
 import '../../../core/widgets/custom_scaffold.dart';
 import '../../../core/widgets/texts/text_r.dart';
 import '../bloc/home_bloc.dart';
+import '../widgets/flight_card.dart';
+import '../widgets/jetlag_card.dart';
 import '../widgets/no_data.dart';
+import '../widgets/statistics_button.dart';
+import '../widgets/statistics_card.dart';
+import '../widgets/title_text.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,17 +24,12 @@ class HomePage extends StatelessWidget {
       title: 'Flights',
       home: true,
       body: ListView(
-        // crossAxisAlignment: CrossAxisAlignment.start,
         padding: const EdgeInsets.symmetric(horizontal: 15),
         children: [
           const SizedBox(height: 10),
           Row(
             children: [
-              TextR(
-                'Your flight',
-                fontSize: 15,
-                color: AppColors.white70,
-              ),
+              const TitleText('Your flight'),
               const Spacer(),
               BlocBuilder<HomeBloc, HomeState>(
                 builder: (context, state) {
@@ -42,6 +42,7 @@ class HomePage extends StatelessWidget {
                       );
                     }
                   }
+
                   return Container();
                 },
               ),
@@ -77,12 +78,34 @@ class HomePage extends StatelessWidget {
             },
           ),
           const SizedBox(height: 10),
-          TextR(
-            'Jetlag',
-            fontSize: 15,
-            color: AppColors.white70,
-          ),
+          const TitleText('Jetlag'),
           const SizedBox(height: 10),
+          const JetlagCard(),
+          const SizedBox(height: 10),
+          const StatisticsButton(),
+          const SizedBox(height: 10),
+          const Row(
+            children: [
+              StatisticsCard(
+                id: 1,
+                title: 'Visited',
+                value: '2 countries',
+              ),
+              SizedBox(width: 13),
+              StatisticsCard(
+                id: 2,
+                title: 'Spend in flight',
+                value: '1 hours',
+              ),
+              SizedBox(width: 13),
+              StatisticsCard(
+                id: 3,
+                title: 'The largest flight to',
+                value: '1 hours',
+              ),
+            ],
+          ),
+          SizedBox(height: 20 + getBottom(context)),
         ],
       ),
     );

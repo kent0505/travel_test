@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/config/app_colors.dart';
 import '../../../core/models/flight.dart';
 import '../../../core/utils.dart';
 import '../../../core/widgets/buttons/primary_button.dart';
 import '../../../core/widgets/custom_scaffold.dart';
 import '../../../core/widgets/textfields/date_field.dart';
 import '../../../core/widgets/textfields/txt_field.dart';
-import '../../../core/widgets/texts/text_r.dart';
+import '../widgets/title_text.dart';
 
 class AddArrivalPage extends StatefulWidget {
   const AddArrivalPage({super.key, required this.flight});
@@ -92,11 +91,7 @@ class _AddArrivalPageState extends State<AddArrivalPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 13),
-            TextR(
-              'Arrival from origin',
-              fontSize: 15,
-              color: AppColors.white70,
-            ),
+            const TitleText('Arrival from origin'),
             const SizedBox(height: 13),
             TxtField(
               controller: controller1,

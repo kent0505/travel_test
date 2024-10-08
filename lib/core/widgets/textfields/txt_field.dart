@@ -54,7 +54,7 @@ class _TxtFieldState extends State<TxtField> {
     return Container(
       height: _height(),
       decoration: BoxDecoration(
-        color: AppColors.main,
+        color: const Color(0xff474749),
         borderRadius: BorderRadius.circular(15),
       ),
       child: TextField(

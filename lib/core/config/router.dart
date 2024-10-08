@@ -5,6 +5,7 @@ import '../../features/home/pages/add_departure_page.dart';
 import '../../features/home/pages/add_transfer_page.dart';
 import '../../features/home/pages/flight_detail_page.dart';
 import '../../features/home/pages/home_page.dart';
+import '../../features/home/pages/jetlag_page.dart';
 import '../../features/home/pages/settings_page.dart';
 import '../../features/home/pages/onboard_page.dart';
 import '../../features/home/pages/splash_page.dart';
@@ -50,6 +51,10 @@ final routerConfig = GoRouter(
       builder: (context, state) => FlightDetailPage(
         flight: state.extra as Flight,
       ),
+    ),
+    GoRoute(
+      path: '/jetlag',
+      builder: (context, state) => const JetlagPage(),
     ),
   ],
 );

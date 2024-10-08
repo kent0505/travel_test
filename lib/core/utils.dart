@@ -46,11 +46,23 @@ DateTime stringToDate(String date) {
   }
 }
 
-String getDateDiff(String date1, String date2) {
-  Duration difference = stringToDate(date2).difference(stringToDate(date1));
+String getDateDiff(
+  String date1,
+  String date2,
+  String time1,
+  String time2,
+) {
+  DateTime dateTime1 = DateTime.parse("${convertToIsoFormat(date1)}T$time1:00");
+  DateTime dateTime2 = DateTime.parse("${convertToIsoFormat(date2)}T$time2:00");
+  Duration difference = dateTime2.difference(dateTime1);
   int hours = difference.inHours;
   int minutes = difference.inMinutes.remainder(60);
   return '${hours}h ${minutes}min'.replaceAll('0min', '');
+}
+
+String convertToIsoFormat(String date) {
+  List<String> parts = date.split('.');
+  return '${parts[2]}-${parts[1]}-${parts[0]}';
 }
 
 double getStatusBar(BuildContext context) {

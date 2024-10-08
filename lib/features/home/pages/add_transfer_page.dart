@@ -11,6 +11,7 @@ import '../../../core/widgets/textfields/date_field.dart';
 import '../../../core/widgets/textfields/txt_field.dart';
 import '../../../core/widgets/texts/text_r.dart';
 import '../bloc/home_bloc.dart';
+import '../widgets/title_text.dart';
 
 class AddTransferPage extends StatefulWidget {
   const AddTransferPage({super.key, required this.flight});
@@ -142,11 +143,7 @@ class _AddTransferPageState extends State<AddTransferPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 13),
-            TextR(
-              'Departure from origin',
-              fontSize: 15,
-              color: AppColors.white70,
-            ),
+            const TitleText('Departure from origin'),
             const SizedBox(height: 13),
             if (transfer) ...[
               TxtField(
@@ -167,11 +164,7 @@ class _AddTransferPageState extends State<AddTransferPage> {
                 onChanged: checkActive,
               ),
               const SizedBox(height: 9),
-              TextR(
-                'Departure',
-                fontSize: 15,
-                color: AppColors.white70,
-              ),
+              const TitleText('Departure'),
               const SizedBox(height: 9),
               Row(
                 children: [
@@ -191,11 +184,7 @@ class _AddTransferPageState extends State<AddTransferPage> {
                 ],
               ),
               const SizedBox(height: 9),
-              TextR(
-                'Arrival',
-                fontSize: 15,
-                color: AppColors.white70,
-              ),
+              const TitleText('Arrival'),
               const SizedBox(height: 9),
               Row(
                 children: [
