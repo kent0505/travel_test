@@ -7,6 +7,7 @@ class AppColors {
   static const Color red = Color(0xffFF3B2F);
   static const Color blue = Color(0xff0A84FF);
 
+  static Color black25 = black.withOpacity(0.25);
   static Color white50 = white.withOpacity(0.5);
   static Color white70 = white.withOpacity(0.7);
   static Color white80 = white.withOpacity(0.8);

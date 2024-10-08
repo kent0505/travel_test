@@ -4,6 +4,7 @@ abstract class HomeState {}
 
 class HomeInitial extends HomeState {}
 
-class HomeActivities extends HomeState {}
-
-class HomeSettings extends HomeState {}
+class HomeLoadedState extends HomeState {
+  final List<Flight> flights;
+  HomeLoadedState({required this.flights});
+}

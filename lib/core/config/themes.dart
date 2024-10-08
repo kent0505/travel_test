@@ -7,10 +7,10 @@ final theme = ThemeData(
   useMaterial3: false,
   primarySwatch: Colors.grey,
   fontFamily: Fonts.regular,
-  textSelectionTheme: const TextSelectionThemeData(
-    cursorColor: AppColors.main,
-    selectionColor: AppColors.main,
-    selectionHandleColor: AppColors.main,
+  textSelectionTheme: TextSelectionThemeData(
+    cursorColor: AppColors.blue,
+    selectionColor: AppColors.blue.withOpacity(0.5),
+    selectionHandleColor: AppColors.blue,
   ),
   colorScheme: ColorScheme.fromSwatch(
     accentColor: AppColors.main,
@@ -31,8 +31,9 @@ const cupertinoTheme = CupertinoThemeData(
     ),
     dateTimePickerTextStyle: TextStyle(
       color: AppColors.white,
-      fontSize: 24,
-      fontFamily: Fonts.medium,
+      decorationColor: AppColors.red,
+      fontSize: 20,
+      fontFamily: Fonts.regular,
     ),
   ),
 );

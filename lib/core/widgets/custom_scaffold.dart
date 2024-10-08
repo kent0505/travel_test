@@ -44,7 +44,7 @@ class CustomScaffold extends StatelessWidget {
                   const Spacer(),
                   CuperButton(
                     onPressed: () {
-                      context.push('/home/settings');
+                      context.push('/settings');
                     },
                     minSize: 25,
                     child: Row(
@@ -76,7 +76,7 @@ class CustomScaffold extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const TextR('Settings', fontSize: 20),
+                      TextR(title, fontSize: 20),
                       TextR(
                         subtitle,
                         fontSize: 15,

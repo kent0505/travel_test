@@ -33,7 +33,7 @@ class PrimaryButton extends StatelessWidget {
           child: TextR(
             title,
             fontSize: 20,
-            color: AppColors.white,
+            color: active ? AppColors.white : AppColors.white50,
           ),
         ),
       ),
