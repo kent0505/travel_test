@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/config/app_colors.dart';
-import '../../core/db/prefs.dart';
+import '../../../core/config/app_colors.dart';
+import '../../../core/db/prefs.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});

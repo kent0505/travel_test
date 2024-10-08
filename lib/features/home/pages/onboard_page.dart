@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/config/app_colors.dart';
-import '../../core/db/prefs.dart';
-import '../../core/widgets/buttons/cuper_button.dart';
-import '../../core/widgets/texts/text_r.dart';
+import '../../../core/config/app_colors.dart';
+import '../../../core/db/prefs.dart';
+import '../../../core/widgets/buttons/cuper_button.dart';
+import '../../../core/widgets/texts/text_r.dart';
 
 class OnboardPage extends StatelessWidget {
   const OnboardPage({super.key});
