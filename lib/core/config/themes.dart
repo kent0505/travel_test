@@ -13,7 +13,7 @@ final theme = ThemeData(
     selectionHandleColor: AppColors.blue,
   ),
   colorScheme: ColorScheme.fromSwatch(
-    accentColor: AppColors.main,
+    accentColor: Colors.grey,
   ),
   dialogTheme: const DialogTheme(
     // insetPadding: EdgeInsets.symmetric(horizontal: 20),

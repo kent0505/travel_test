@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/home/pages/add_arrival_page.dart';
 import '../../features/home/pages/add_departure_page.dart';
 import '../../features/home/pages/add_transfer_page.dart';
+import '../../features/home/pages/flight_detail_page.dart';
 import '../../features/home/pages/home_page.dart';
 import '../../features/home/pages/settings_page.dart';
 import '../../features/home/pages/onboard_page.dart';
@@ -41,6 +42,12 @@ final routerConfig = GoRouter(
     GoRoute(
       path: '/add-transfer',
       builder: (context, state) => AddTransferPage(
+        flight: state.extra as Flight,
+      ),
+    ),
+    GoRoute(
+      path: '/flight-detail',
+      builder: (context, state) => FlightDetailPage(
         flight: state.extra as Flight,
       ),
     ),

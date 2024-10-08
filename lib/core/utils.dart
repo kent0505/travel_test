@@ -46,6 +46,13 @@ DateTime stringToDate(String date) {
   }
 }
 
+String getDateDiff(String date1, String date2) {
+  Duration difference = stringToDate(date2).difference(stringToDate(date1));
+  int hours = difference.inHours;
+  int minutes = difference.inMinutes.remainder(60);
+  return '${hours}h ${minutes}min'.replaceAll('0min', '');
+}
+
 double getStatusBar(BuildContext context) {
   return MediaQuery.of(context).viewPadding.top;
 }
@@ -74,19 +81,5 @@ void logger(Object message) {
     developer.log(message.toString());
   } catch (e) {
     debugPrint(e.toString());
-  }
-}
-
-void precacheImages(BuildContext context) {
-  List<String> imageAssets = [
-    'assets/test.jpg',
-    // 'assets/.png',
-  ];
-  try {
-    for (String assets in imageAssets) {
-      precacheImage(AssetImage(assets), context);
-    }
-  } catch (e) {
-    logger(e);
   }
 }

@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/config/router.dart';
 import 'core/config/themes.dart';
 import 'core/db/db.dart';
-import 'core/utils.dart';
 import 'features/home/bloc/home_bloc.dart';
 
 void main() async {
@@ -22,8 +21,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    precacheImages(context);
-
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => HomeBloc()),

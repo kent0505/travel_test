@@ -12,6 +12,7 @@ class NoData extends StatelessWidget {
     return Container(
       height: 90,
       padding: const EdgeInsets.symmetric(vertical: 12),
+      margin: const EdgeInsets.only(bottom: 11),
       decoration: BoxDecoration(
         color: AppColors.main,
         borderRadius: BorderRadius.circular(15),
