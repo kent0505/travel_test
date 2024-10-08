@@ -1,9 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/config/app_colors.dart';
 import '../../core/db/prefs.dart';
-import '../../core/widgets/others/loading_widget.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -37,7 +37,9 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: AppColors.black,
-      body: LoadingWidget(),
+      body: CupertinoActivityIndicator(
+        color: AppColors.white,
+      ),
     );
   }
 }
