@@ -1,6 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '../models/flight.dart';
+import '../models/plan.dart';
 import '../utils.dart';
 
 class DB {
@@ -14,6 +15,7 @@ Future<void> initHive() async {
     await Hive.initFlutter();
     // await Hive.deleteBoxFromDisk(DB.boxName);
     Hive.registerAdapter(FlightAdapter());
+    Hive.registerAdapter(PlanAdapter());
   } catch (e) {
     logger(e);
   }

@@ -72,6 +72,7 @@ class _AddTransferPageState extends State<AddTransferPage> {
               transferDepartureTime: controller5.text,
               transferArrivalDate: controller6.text,
               transferArrivalTime: controller7.text,
+              plans: [],
             ),
           ),
         );
@@ -102,6 +103,7 @@ class _AddTransferPageState extends State<AddTransferPage> {
               transferDepartureTime: '',
               transferArrivalDate: '',
               transferArrivalTime: '',
+              plans: [],
             ),
           ),
         );

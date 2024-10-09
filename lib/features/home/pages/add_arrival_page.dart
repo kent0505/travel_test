@@ -59,6 +59,7 @@ class _AddArrivalPageState extends State<AddArrivalPage> {
         transferDepartureTime: '',
         transferArrivalDate: '',
         transferArrivalTime: '',
+        plans: [],
       ),
     );
   }

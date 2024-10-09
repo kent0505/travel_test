@@ -38,6 +38,8 @@ class Flight {
   String transferArrivalDate;
   @HiveField(17)
   String transferArrivalTime;
+  @HiveField(18)
+  List plans;
 
   Flight({
     required this.id,
@@ -58,6 +60,7 @@ class Flight {
     required this.transferDepartureTime,
     required this.transferArrivalDate,
     required this.transferArrivalTime,
+    required this.plans,
   });
 }
 
@@ -86,6 +89,7 @@ class FlightAdapter extends TypeAdapter<Flight> {
       transferDepartureTime: reader.read(),
       transferArrivalDate: reader.read(),
       transferArrivalTime: reader.read(),
+      plans: reader.read(),
     );
   }
 
@@ -109,5 +113,6 @@ class FlightAdapter extends TypeAdapter<Flight> {
     writer.write(obj.transferDepartureTime);
     writer.write(obj.transferArrivalDate);
     writer.write(obj.transferArrivalTime);
+    writer.write(obj.plans);
   }
 }

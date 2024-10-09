@@ -78,6 +78,7 @@ class _EditFlightPageState extends State<EditFlightPage> {
                 transferDepartureTime: widget.flight.transferDepartureTime,
                 transferArrivalDate: widget.flight.transferArrivalDate,
                 transferArrivalTime: widget.flight.transferArrivalTime,
+                plans: widget.flight.plans,
               ),
             ),
           );

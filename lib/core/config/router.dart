@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:travel_test/features/home/pages/add_plan_page.dart';
 
 import '../../features/home/pages/add_arrival_page.dart';
 import '../../features/home/pages/add_departure_page.dart';
@@ -45,6 +46,12 @@ final routerConfig = GoRouter(
     GoRoute(
       path: '/add-transfer',
       builder: (context, state) => AddTransferPage(
+        flight: state.extra as Flight,
+      ),
+    ),
+    GoRoute(
+      path: '/add-plan',
+      builder: (context, state) => AddPlanPage(
         flight: state.extra as Flight,
       ),
     ),

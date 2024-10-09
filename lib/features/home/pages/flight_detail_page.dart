@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:travel_test/features/home/widgets/no_plans_card.dart';
+import 'package:travel_test/features/home/widgets/plan_card.dart';
 
 import '../../../core/config/app_colors.dart';
 import '../../../core/models/flight.dart';
@@ -221,7 +223,9 @@ class _FlightDetailPageState extends State<FlightDetailPage>
                         const TitleText('Flight info'),
                         const Spacer(),
                         CuperButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.push('/add-plan', extra: widget.flight);
+                          },
                           minSize: 20,
                           child: const TextR(
                             'Add plans',
@@ -231,8 +235,19 @@ class _FlightDetailPageState extends State<FlightDetailPage>
                         ),
                       ],
                     ),
+                    const SizedBox(height: 10),
+                    if (widget.flight.plans.isEmpty)
+                      const NoPlansCard()
+                    else ...[
+                      ...List.generate(
+                        widget.flight.plans.length,
+                        (index) {
+                          return PlanCard(plan: widget.flight.plans[index]);
+                        },
+                      ),
+                    ],
                   ],
-                ),
+                )
               ],
             ),
           ),

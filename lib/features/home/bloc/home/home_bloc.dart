@@ -40,6 +40,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           flight.transferDepartureTime = event.flight.transferDepartureTime;
           flight.transferArrivalDate = event.flight.transferArrivalDate;
           flight.transferArrivalTime = event.flight.transferArrivalTime;
+          flight.plans = event.flight.plans;
         }
       }
       await updateFlights();
