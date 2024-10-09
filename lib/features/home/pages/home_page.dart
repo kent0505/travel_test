@@ -7,8 +7,10 @@ import '../../../core/utils.dart';
 import '../../../core/widgets/buttons/primary_button.dart';
 import '../../../core/widgets/custom_scaffold.dart';
 import '../../../core/widgets/texts/text_r.dart';
-import '../bloc/home_bloc.dart';
+import '../bloc/home/home_bloc.dart';
+import '../bloc/jetlag/jetlag_bloc.dart';
 import '../widgets/flight_card.dart';
+import '../widgets/jetlag_active_card.dart';
 import '../widgets/jetlag_card.dart';
 import '../widgets/no_data.dart';
 import '../widgets/statistics_button.dart';
@@ -80,7 +82,22 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 10),
           const TitleText('Jetlag'),
           const SizedBox(height: 10),
-          const JetlagCard(),
+          BlocBuilder<JetlagBloc, JetlagState>(
+            builder: (context, state) {
+              if (state is JetlagLoadedState) {
+                if (state.time.isEmpty) {
+                  return const JetlagCard();
+                } else {
+                  return JetlagActiveCard(
+                    arrival: state.arrival,
+                    departure: state.departure,
+                    time: state.time,
+                  );
+                }
+              }
+              return Container();
+            },
+          ),
           const SizedBox(height: 10),
           const StatisticsButton(),
           const SizedBox(height: 10),

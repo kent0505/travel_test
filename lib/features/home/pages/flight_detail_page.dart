@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:travel_test/features/home/bloc/home_bloc.dart';
 
 import '../../../core/config/app_colors.dart';
 import '../../../core/models/flight.dart';
@@ -10,6 +9,7 @@ import '../../../core/widgets/buttons/cuper_button.dart';
 import '../../../core/widgets/custom_scaffold.dart';
 import '../../../core/widgets/dialogs/delete_dialog.dart';
 import '../../../core/widgets/texts/text_r.dart';
+import '../bloc/home/home_bloc.dart';
 import '../widgets/flight_detail_card.dart';
 import '../widgets/title_text.dart';
 import '../widgets/transfer_card.dart';

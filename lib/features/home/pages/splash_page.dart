@@ -5,7 +5,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/config/app_colors.dart';
 import '../../../core/db/prefs.dart';
-import '../bloc/home_bloc.dart';
+import '../bloc/home/home_bloc.dart';
+import '../bloc/jetlag/jetlag_bloc.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -19,6 +20,7 @@ class _SplashPageState extends State<SplashPage> {
     await getData().then((onboard) {
       if (mounted) {
         context.read<HomeBloc>().add(GetFlightsEvent());
+        context.read<JetlagBloc>().add(GetJetlagEvent());
       }
       Future.delayed(const Duration(seconds: 2), () {
         if (mounted) {

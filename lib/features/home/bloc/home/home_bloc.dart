@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/db/db.dart';
-import '../../../core/models/flight.dart';
+import '../../../../core/db/db.dart';
+import '../../../../core/models/flight.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';

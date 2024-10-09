@@ -5,7 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/config/router.dart';
 import 'core/config/themes.dart';
 import 'core/db/db.dart';
-import 'features/home/bloc/home_bloc.dart';
+import 'features/home/bloc/home/home_bloc.dart';
+import 'features/home/bloc/jetlag/jetlag_bloc.dart';
 
 void main() async {
   await initHive();
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => HomeBloc()),
+        BlocProvider(create: (context) => JetlagBloc()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

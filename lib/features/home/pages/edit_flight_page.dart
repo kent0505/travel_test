@@ -8,7 +8,7 @@ import '../../../core/widgets/buttons/primary_button.dart';
 import '../../../core/widgets/custom_scaffold.dart';
 import '../../../core/widgets/textfields/date_field.dart';
 import '../../../core/widgets/textfields/txt_field.dart';
-import '../bloc/home_bloc.dart';
+import '../bloc/home/home_bloc.dart';
 import '../widgets/title_text.dart';
 
 class EditFlightPage extends StatefulWidget {
