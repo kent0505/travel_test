@@ -185,22 +185,27 @@ class _FlightDetailPageState extends State<FlightDetailPage>
                       departure: false,
                     ),
                     const SizedBox(height: 10),
-                    if (widget.flight.transferAirport.isNotEmpty) ...[
-                      Row(
-                        children: [
-                          const TitleText('Transfer info'),
-                          const Spacer(),
-                          CuperButton(
-                            onPressed: () {},
-                            minSize: 20,
-                            child: const TextR(
-                              'Edit',
-                              fontSize: 15,
-                              color: AppColors.blue,
-                            ),
+                    Row(
+                      children: [
+                        const TitleText('Transfer info'),
+                        const Spacer(),
+                        CuperButton(
+                          onPressed: () {
+                            context.push(
+                              '/edit-transfer',
+                              extra: widget.flight,
+                            );
+                          },
+                          minSize: 20,
+                          child: const TextR(
+                            'Edit',
+                            fontSize: 15,
+                            color: AppColors.blue,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
+                    ),
+                    if (widget.flight.transferAirport.isNotEmpty) ...[
                       const SizedBox(height: 10),
                       TransferCard(
                         flight: widget.flight,

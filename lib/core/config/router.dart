@@ -5,6 +5,7 @@ import '../../features/home/pages/add_arrival_page.dart';
 import '../../features/home/pages/add_departure_page.dart';
 import '../../features/home/pages/add_transfer_page.dart';
 import '../../features/home/pages/edit_flight_page.dart';
+import '../../features/home/pages/edit_transfer_page.dart';
 import '../../features/home/pages/flight_detail_page.dart';
 import '../../features/home/pages/home_page.dart';
 import '../../features/home/pages/jetlag_page.dart';
@@ -46,6 +47,12 @@ final routerConfig = GoRouter(
     GoRoute(
       path: '/add-transfer',
       builder: (context, state) => AddTransferPage(
+        flight: state.extra as Flight,
+      ),
+    ),
+    GoRoute(
+      path: '/edit-transfer',
+      builder: (context, state) => EditTransferPage(
         flight: state.extra as Flight,
       ),
     ),
