@@ -9,6 +9,7 @@ import '../../features/home/pages/jetlag_page.dart';
 import '../../features/home/pages/settings_page.dart';
 import '../../features/home/pages/onboard_page.dart';
 import '../../features/home/pages/splash_page.dart';
+import '../../features/home/pages/statistics_page.dart';
 import '../models/flight.dart';
 
 final routerConfig = GoRouter(
@@ -55,6 +56,10 @@ final routerConfig = GoRouter(
     GoRoute(
       path: '/jetlag',
       builder: (context, state) => const JetlagPage(),
+    ),
+    GoRoute(
+      path: '/statistics',
+      builder: (context, state) => const StatisticsPage(),
     ),
   ],
 );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/config/app_colors.dart';
 import '../../../core/widgets/buttons/cuper_button.dart';
@@ -10,10 +11,13 @@ class StatisticsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CuperButton(
-      onPressed: () {},
+      onPressed: () {
+        context.push('/statistics');
+      },
       minSize: 22,
       child: Row(
         children: [
+          const SizedBox(width: 3),
           TextR(
             'Flight statistics',
             fontSize: 15,
