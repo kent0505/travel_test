@@ -101,26 +101,32 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 10),
           const StatisticsButton(),
           const SizedBox(height: 10),
-          const Row(
-            children: [
-              StatisticsCard(
-                id: 1,
-                title: 'Visited',
-                value: '2 countries',
-              ),
-              SizedBox(width: 13),
-              StatisticsCard(
-                id: 2,
-                title: 'Spend in flight',
-                value: '1 hours',
-              ),
-              SizedBox(width: 13),
-              StatisticsCard(
-                id: 3,
-                title: 'The largest flight to',
-                value: '1 hours',
-              ),
-            ],
+          BlocBuilder<HomeBloc, HomeState>(
+            builder: (context, state) {
+              return Row(
+                children: [
+                  StatisticsCard(
+                    id: 1,
+                    title: 'Visited',
+                    value: getVisitedCities().length == 1
+                        ? '${getVisitedCities().length} country'
+                        : '${getVisitedCities().length} countries',
+                  ),
+                  const SizedBox(width: 13),
+                  StatisticsCard(
+                    id: 2,
+                    title: 'Spend in flight',
+                    value: '${getTotalHours()} hours',
+                  ),
+                  const SizedBox(width: 13),
+                  StatisticsCard(
+                    id: 3,
+                    title: 'The largest flight to',
+                    value: '${getLargestHour()} hours',
+                  ),
+                ],
+              );
+            },
           ),
           SizedBox(height: 20 + getBottom(context)),
         ],

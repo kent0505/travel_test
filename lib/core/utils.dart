@@ -63,6 +63,33 @@ String getDateDiff(
   return '$h $m';
 }
 
+int getLargestHour() {
+  int largestHour = 0;
+  for (Flight flight in DB.flightsList) {
+    DateTime dateTime1 = DateTime.parse(
+        "${convertToIsoFormat(flight.departureDate)}T${flight.departureTime}:00");
+    DateTime dateTime2 = DateTime.parse(
+        "${convertToIsoFormat(flight.arrivalDate)}T${flight.arrivalTime}:00");
+    Duration difference = dateTime2.difference(dateTime1);
+    int hours = difference.inHours;
+    if (hours > largestHour) largestHour = hours;
+  }
+  return largestHour;
+}
+
+int getTotalHours() {
+  int totalHours = 0;
+  for (Flight flight in DB.flightsList) {
+    DateTime dateTime1 = DateTime.parse(
+        "${convertToIsoFormat(flight.departureDate)}T${flight.departureTime}:00");
+    DateTime dateTime2 = DateTime.parse(
+        "${convertToIsoFormat(flight.arrivalDate)}T${flight.arrivalTime}:00");
+    Duration difference = dateTime2.difference(dateTime1);
+    totalHours += difference.inHours;
+  }
+  return totalHours;
+}
+
 String convertToIsoFormat(String date) {
   List<String> parts = date.split('.');
   return '${parts[2]}-${parts[1]}-${parts[0]}';
