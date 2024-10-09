@@ -16,7 +16,6 @@ final theme = ThemeData(
     accentColor: Colors.grey,
   ),
   dialogTheme: const DialogTheme(
-    // insetPadding: EdgeInsets.symmetric(horizontal: 20),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(15)),
     ),
