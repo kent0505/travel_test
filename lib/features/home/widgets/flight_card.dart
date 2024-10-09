@@ -123,28 +123,28 @@ class FlightCard extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 24),
-        Container(
-          height: 50,
-          decoration: BoxDecoration(
-            color: AppColors.main,
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: CuperButton(
-            onPressed: () {},
-            child: Row(
-              children: [
-                const SizedBox(width: 14),
-                SvgPicture.asset('assets/plans.svg'),
-                const SizedBox(width: 14),
-                const TextR('Plans', fontSize: 24),
-                const Spacer(),
-                const TextR('>', fontSize: 32),
-                const SizedBox(width: 15),
-              ],
-            ),
-          ),
-        ),
-        const SizedBox(height: 11),
+        // Container(
+        //   height: 50,
+        //   decoration: BoxDecoration(
+        //     color: AppColors.main,
+        //     borderRadius: BorderRadius.circular(15),
+        //   ),
+        //   child: CuperButton(
+        //     onPressed: () {},
+        //     child: Row(
+        //       children: [
+        //         const SizedBox(width: 14),
+        //         SvgPicture.asset('assets/plans.svg'),
+        //         const SizedBox(width: 14),
+        //         const TextR('Plans', fontSize: 24),
+        //         const Spacer(),
+        //         const TextR('>', fontSize: 32),
+        //         const SizedBox(width: 15),
+        //       ],
+        //     ),
+        //   ),
+        // ),
+        // const SizedBox(height: 11),
         Container(
           height: 40,
           decoration: BoxDecoration(

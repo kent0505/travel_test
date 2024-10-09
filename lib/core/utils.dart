@@ -3,6 +3,9 @@ import 'dart:developer' as developer;
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import 'db/db.dart';
+import 'models/flight.dart';
+
 int getCurrentTimestamp() {
   return DateTime.now().millisecondsSinceEpoch ~/ 1000;
 }
@@ -94,4 +97,14 @@ void logger(Object message) {
   } catch (e) {
     debugPrint(e.toString());
   }
+}
+
+List<Flight> getVisitedCities() {
+  List<Flight> sorted = [];
+  for (Flight flight in DB.flightsList) {
+    if (flight.id < getCurrentTimestamp()) {
+      sorted.add(flight);
+    }
+  }
+  return sorted;
 }

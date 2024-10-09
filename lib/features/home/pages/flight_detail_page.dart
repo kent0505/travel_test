@@ -183,30 +183,32 @@ class _FlightDetailPageState extends State<FlightDetailPage>
                       departure: false,
                     ),
                     const SizedBox(height: 10),
-                    Row(
-                      children: [
-                        const TitleText('Transfer info'),
-                        const Spacer(),
-                        CuperButton(
-                          onPressed: () {},
-                          minSize: 20,
-                          child: const TextR(
-                            'Edit',
-                            fontSize: 15,
-                            color: AppColors.blue,
+                    if (widget.flight.transferAirport.isNotEmpty) ...[
+                      Row(
+                        children: [
+                          const TitleText('Transfer info'),
+                          const Spacer(),
+                          CuperButton(
+                            onPressed: () {},
+                            minSize: 20,
+                            child: const TextR(
+                              'Edit',
+                              fontSize: 15,
+                              color: AppColors.blue,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 10),
-                    TransferCard(
-                      flight: widget.flight,
-                    ),
-                    const SizedBox(height: 10),
-                    TransferCard(
-                      flight: widget.flight,
-                      departure: true,
-                    ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      TransferCard(
+                        flight: widget.flight,
+                      ),
+                      const SizedBox(height: 10),
+                      TransferCard(
+                        flight: widget.flight,
+                        departure: true,
+                      ),
+                    ],
                     const SizedBox(height: 50),
                   ],
                 ),
