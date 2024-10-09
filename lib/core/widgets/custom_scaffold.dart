@@ -15,6 +15,7 @@ class CustomScaffold extends StatelessWidget {
     this.subtitle = '',
     this.home = false,
     this.onSkip,
+    this.onDelete,
   });
 
   final Widget body;
@@ -22,6 +23,7 @@ class CustomScaffold extends StatelessWidget {
   final String subtitle;
   final bool home;
   final void Function()? onSkip;
+  final void Function()? onDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -32,82 +34,95 @@ class CustomScaffold extends StatelessWidget {
           Container(
             height: 80 + getStatusBar(context),
             padding: EdgeInsets.only(bottom: home ? 14 : 0),
-            decoration: const BoxDecoration(
-              color: AppColors.main,
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                if (home) ...[
-                  const SizedBox(width: 14),
-                  TextR(title, fontSize: 20),
-                  const Spacer(),
-                  CuperButton(
-                    onPressed: () {
-                      context.push('/settings');
-                    },
-                    minSize: 25,
-                    child: Row(
-                      children: [
-                        SvgPicture.asset('assets/settings.svg'),
-                        const SizedBox(width: 6),
-                        const TextR('Settings', fontSize: 20),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(width: 18),
-                ] else ...[
-                  SizedBox(
-                    width: 56,
-                    child: CuperButton(
-                      onPressed: () {
-                        context.pop();
-                      },
-                      padding: 22,
-                      minSize: 22,
-                      child: const TextR(
-                        '<',
-                        fontSize: 32,
-                        color: AppColors.blue,
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
+            color: AppColors.main,
+            child: home
+                ? Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
+                      const SizedBox(width: 14),
                       TextR(title, fontSize: 20),
-                      TextR(
-                        subtitle,
-                        fontSize: 15,
-                        color: AppColors.white70,
+                      const Spacer(),
+                      CuperButton(
+                        onPressed: () {
+                          context.push('/settings');
+                        },
+                        minSize: 25,
+                        child: Row(
+                          children: [
+                            SvgPicture.asset('assets/settings.svg'),
+                            const SizedBox(width: 6),
+                            const TextR('Settings', fontSize: 20),
+                          ],
+                        ),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(width: 18),
                     ],
-                  ),
-                  const Spacer(),
-                  SizedBox(
-                    width: 56,
-                    child: onSkip != null
-                        ? Padding(
-                            padding: const EdgeInsets.only(
-                              bottom: 14,
-                              right: 14,
-                            ),
+                  )
+                : Stack(
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          SizedBox(
+                            width: 56,
                             child: CuperButton(
-                              onPressed: onSkip,
+                              onPressed: () {
+                                context.pop();
+                              },
+                              padding: 22,
+                              minSize: 22,
                               child: const TextR(
-                                'Skip',
-                                fontSize: 20,
+                                '<',
+                                fontSize: 32,
                                 color: AppColors.blue,
                               ),
                             ),
-                          )
-                        : Container(),
+                          ),
+                          const Spacer(),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextR(title, fontSize: 20),
+                              TextR(
+                                subtitle,
+                                fontSize: 15,
+                                color: AppColors.white70,
+                              ),
+                              const SizedBox(height: 8),
+                            ],
+                          ),
+                          const Spacer(),
+                          const SizedBox(width: 56),
+                        ],
+                      ),
+                      if (onSkip != null)
+                        Positioned(
+                          right: 16,
+                          bottom: 16,
+                          child: CuperButton(
+                            onPressed: onSkip,
+                            child: const TextR(
+                              'Skip',
+                              fontSize: 20,
+                              color: AppColors.blue,
+                            ),
+                          ),
+                        ),
+                      if (onDelete != null)
+                        Positioned(
+                          right: 16,
+                          bottom: 16,
+                          child: CuperButton(
+                            onPressed: onDelete,
+                            child: const TextR(
+                              'Delete',
+                              fontSize: 20,
+                              color: AppColors.red,
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
-                ],
-              ],
-            ),
           ),
           Expanded(
             child: Stack(

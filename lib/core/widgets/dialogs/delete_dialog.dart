@@ -23,7 +23,7 @@ class DeleteDialog extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 20),
-            TextB(
+            TextR(
               title,
               fontSize: 18,
             ),
@@ -73,9 +73,10 @@ class _Button extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextM(
+          TextR(
             title,
             fontSize: 14,
+            color: AppColors.red,
           ),
         ],
       ),

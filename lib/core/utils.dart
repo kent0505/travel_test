@@ -57,7 +57,9 @@ String getDateDiff(
   Duration difference = dateTime2.difference(dateTime1);
   int hours = difference.inHours;
   int minutes = difference.inMinutes.remainder(60);
-  return '${hours}h ${minutes}min'.replaceAll('0min', '');
+  String h = '${hours}h';
+  String m = '${minutes}min'.replaceAll('-', '').replaceAll('0min', '');
+  return '$h $m';
 }
 
 String convertToIsoFormat(String date) {
