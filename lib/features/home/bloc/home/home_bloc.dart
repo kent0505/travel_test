@@ -14,7 +14,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     });
 
     on<AddFlightEvent>((event, emit) async {
-      // DB.modelsList.insert(0, event.Flight);
       DB.flightsList.add(event.flight);
       await updateFlights();
       emit(HomeLoadedState(flights: DB.flightsList));
