@@ -214,6 +214,7 @@ class _AddTransferPageState extends State<AddTransferPage> {
             ] else ...[
               Container(
                 height: 76,
+                width: double.infinity,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 50,
                   vertical: 14,
